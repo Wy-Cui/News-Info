@@ -5,7 +5,7 @@
       <!-- <van-button class="search-btn" slot="title" type="info" size="small" round icon="search">搜索</van-button> -->
       <!-- 更推荐下面这种插槽的写法 -->
       <template #title>
-        <van-button class="search-btn" type="info" size="small" round icon="search">搜索</van-button>
+        <van-button class="search-btn" type="info" size="small" round icon="search" to="/search">搜索</van-button>
       </template>
     </van-nav-bar>
     <!-- /导航栏 -->

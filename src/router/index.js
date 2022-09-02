@@ -7,6 +7,7 @@ const Home = () => import('@/views/Home/Home.vue')
 const Qa = () => import('@/views/Qa/Qa.vue')
 const Video = () => import('@/views/Video/Video.vue')
 const My = () => import('@/views/My/My.vue')
+const Search = () => import('@/views/Search/Search.vue')
 
 Vue.use(VueRouter)
 
@@ -43,6 +44,11 @@ const routes = [
         component: My
       }
     ]
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: Search
   }
 ]
 
