@@ -70,6 +70,7 @@
 <script>
 import { mapState } from 'vuex'
 import { getUserInfo } from '@/api/user.js'
+import { getUserCollections } from '@/api/article.js'
 
 export default {
   name: 'MyPage',
@@ -85,6 +86,7 @@ export default {
     // 初始化的时候，如果用户登录了，我才请求获取当前登录用户的信息
     if (this.user) {
       this.loadUserInfo()
+      this.loadUserCollection()
     }
   },
   methods: {
@@ -112,6 +114,10 @@ export default {
       } catch (error) {
         this.$toast('获取数据失败，请稍后重试')
       }
+    },
+    async loadUserCollection() {
+      const { data } = await getUserCollections()
+      console.log(data)
     }
   }
 }

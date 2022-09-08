@@ -8,6 +8,7 @@ const Qa = () => import('@/views/Qa/Qa.vue')
 const Video = () => import('@/views/Video/Video.vue')
 const My = () => import('@/views/My/My.vue')
 const Search = () => import('@/views/Search/Search.vue')
+const Article = () => import('@/views/Article/Article.vue')
 
 Vue.use(VueRouter)
 
@@ -49,6 +50,12 @@ const routes = [
     path: '/search',
     name: 'search',
     component: Search
+  },
+  {
+    path: '/article/:articleId',
+    name: 'article',
+    component: Article,
+    props: true // 开启 props 传参，说白了就是把路由参数映射到组件的 props 数据中
   }
 ]
 
