@@ -64,7 +64,7 @@ export const deleteLike = (articleId) => {
   })
 }
 
-// 获取用户收藏列表
+// 获取用户收藏列表（自用）
 export const getUserCollections = () => {
   return request({
     method: 'GET',

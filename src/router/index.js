@@ -9,6 +9,7 @@ const Video = () => import('@/views/Video/Video.vue')
 const My = () => import('@/views/My/My.vue')
 const Search = () => import('@/views/Search/Search.vue')
 const Article = () => import('@/views/Article/Article.vue')
+const UserProfile = () => import('@/views/UserProfile/UserProfile.vue')
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,9 @@ const routes = [
         path: '/home', // （未知错误，重定向可以，默认子路由无效）
         name: 'home',
         component: Home
+        // meta: {
+        //   keepAlive: true
+        // }
       },
       {
         path: '/qa',
@@ -56,6 +60,11 @@ const routes = [
     name: 'article',
     component: Article,
     props: true // 开启 props 传参，说白了就是把路由参数映射到组件的 props 数据中
+  },
+  {
+    path: '/user/profile',
+    name: 'user-profile',
+    component: UserProfile
   }
 ]
 

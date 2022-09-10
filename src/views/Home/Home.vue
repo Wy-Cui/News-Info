@@ -101,6 +101,17 @@ export default {
       this.isChannelEditShow = isChannelEditShow
     }
   }
+  // 在页面离开时记录滚动位置
+  // beforeRouteLeave(to, from, next) {
+  //   this.scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+  //   next()
+  // },
+  // 进入该页面时，用之前保存的滚动位置赋值
+  // beforeRouteEnter(to, from, next) {
+  //   next((vm) => {
+  //     document.body.scrollTop = vm.scrollTop
+  //   })
+  // }
 }
 </script>
 

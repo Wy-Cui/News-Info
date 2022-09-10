@@ -8,7 +8,7 @@
           <span class="name">{{ userInfo.name }}</span>
         </div>
         <div class="right">
-          <van-button size="mini" round>编辑资料</van-button>
+          <van-button size="mini" round to="user/profile">编辑资料</van-button>
         </div>
       </div>
       <div class="data-state">
@@ -70,7 +70,6 @@
 <script>
 import { mapState } from 'vuex'
 import { getUserInfo } from '@/api/user.js'
-import { getUserCollections } from '@/api/article.js'
 
 export default {
   name: 'MyPage',
@@ -86,7 +85,6 @@ export default {
     // 初始化的时候，如果用户登录了，我才请求获取当前登录用户的信息
     if (this.user) {
       this.loadUserInfo()
-      this.loadUserCollection()
     }
   },
   methods: {
@@ -114,10 +112,6 @@ export default {
       } catch (error) {
         this.$toast('获取数据失败，请稍后重试')
       }
-    },
-    async loadUserCollection() {
-      const { data } = await getUserCollections()
-      console.log(data)
     }
   }
 }
